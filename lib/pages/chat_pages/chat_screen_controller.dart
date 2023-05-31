@@ -6,6 +6,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import '../../modals/chat_modals.dart';
+import '../../services/open_ai_services.dart';
 import '../../shared_preference/shared_preference.dart';
 import '../../utils/app_key.dart';
   import 'package:speech_to_text/speech_to_text.dart' as stt;
@@ -45,7 +46,7 @@ class ChatScreenController extends GetxController{
 
   storeChatLimit (int value) async {
     storeIntKey(messageKey,value);
-    messageLimit = await getIntKey(messageKey) ?? maxMessageLimit;
+    messageLimit.value = await getIntKey(messageKey) ?? maxMessageLimit;
     print("MessageLimit =------> $messageLimit");
     update();
   }
@@ -72,15 +73,17 @@ class ChatScreenController extends GetxController{
   dynamic chatComplete(String question) async {
     String data = "";
     try{
-      final request = ChatCompleteText(messages: [
-        Map.of({"role": "user", "content": question.trim()})
-      ],
-          maxToken: 300,
-          model: ChatModel.gptTurbo);
-      final response = await openAI.onChatCompletion(request: request);
-      for (var element in response!.choices) {
-        data = element.message?.content.toString() ?? "";
-      }
+      data = await OpenAiServices().getChatResponse(question);
+      update();
+      // final request = ChatCompleteText(messages: [
+      //   Map.of({"role": "user", "content": question.trim()})
+      // ],
+      //     maxToken: 300,
+      //     model: ChatModel.gptTurbo);
+      // final response = await openAI.onChatCompletion(request: request);
+      // for (var element in response!.choices) {
+      //   data = element.message?.content.toString() ?? "";
+      // }
     }catch(e){
       final request = CompleteText(prompt: question,   model: Model.textDavinci3, maxTokens: 300);
       final response = await openAI.onCompletion(request: request);
@@ -93,8 +96,7 @@ class ChatScreenController extends GetxController{
 
 
   generateResponse(String sendQuestion) async {
-    getLocalData();
-
+    await getLocalData();
     await flutterTts.stop();
     isLoading.value = true;
     try{

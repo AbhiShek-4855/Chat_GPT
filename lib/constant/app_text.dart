@@ -1,5 +1,5 @@
 class AppText {
-  static const String appName = "ChatBot";
+  static const String appName = "Ask Bard AI";
   static const String privacyPolicyUrl = "https://www.freeprivacypolicy.com/live/ea832e30-56d9-45df-a14d-168e1e10ad6a";
   static const String termsUrl = "https://www.termsandconditionsgenerator.com/live.php?token=AdwleNX3LyhNHFhH0zpW15ZcgZKBNkJ0";
 }

@@ -5,6 +5,7 @@ import 'package:chat_bot/pages/chat_pages/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../constant/app_assets.dart';
 import '../../constant/app_color.dart';
 import '../../constant/app_text.dart';
 import '../../widgets/intro_button.dart';
@@ -29,9 +30,13 @@ class HomeScreen extends StatelessWidget {
             height: height / 3,
           ),
 
-          Align(
-              alignment: Alignment.center,
-              child: AppIcon.openAiIcon()),
+          // Align(
+          //     alignment: Alignment.center,
+          //     child: AppIcon.openAiIcon()),
+          SizedBox(
+              height: 200,
+              width: 200,
+              child: Image.asset(AppAssets.splashScreenImage,color: AppColor.introTextColor,)),
 
           30.0.addHSpace(),
 

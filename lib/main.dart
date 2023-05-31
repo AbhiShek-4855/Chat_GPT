@@ -1,4 +1,6 @@
 import 'package:chat_bot/pages/chat_pages/chat_screen.dart';
+import 'package:chat_bot/pages/home_pages/home_screen.dart';
+import 'package:chat_bot/pages/splash_pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChatScreen(),
+      home: SplashScreen(),
     );
   }
 }

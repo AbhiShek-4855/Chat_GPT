@@ -1,8 +1,6 @@
 
 
-import '../constant/app_text.dart';
-
-String openAiToken = "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";
+String openAiToken = "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";
 
 /// ANDROID GOOGLE ADS ID
 String appOpenAndroidId =  "ca-app-pub-3940256099942544/3419835294";

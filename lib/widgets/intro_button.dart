@@ -1,3 +1,4 @@
+import 'package:chat_bot/constant/app_text.dart';
 import 'package:chat_bot/extensions/space_extension.dart';
 import 'package:chat_bot/extensions/text_extension.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class IntroButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              "Try ChatBot".introButtonStyle(),
+              "Try ${AppText.appName}".introButtonStyle(),
               5.0.addWSpace(),
               Icon(Icons.arrow_forward_rounded,color: AppColor.introTextColor ,)
             ],

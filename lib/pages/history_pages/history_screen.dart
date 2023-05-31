@@ -23,7 +23,7 @@ class HistoryScreen extends StatelessWidget {
       body: Obx(() {
         return historyScreenController.historyList.isEmpty
             ? const Center(
-                child: Text("NO Pending History",
+                child: Text("No Pending History",
                     style: TextStyle(color: Colors.white)),
               )
             : ListView.builder(
@@ -36,10 +36,7 @@ class HistoryScreen extends StatelessWidget {
                     leading: AppIcon.historyChatIcon(),
                     onTap: () {
                       Get.to(
-                          HistoryChatViewScreen(
-                            answer: historyChatList[index].answer ?? "",
-                            message: historyChatList[index].message ?? "",
-                          ),
+                          HistoryChatViewScreen(answer: historyChatList[index].answer ?? "", message: historyChatList[index].message ?? "",),
                           transition: Transition.rightToLeft);
                     },
                     title: Text('${historyChatList[index].answer}',

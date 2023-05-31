@@ -2,6 +2,12 @@ class AppAssets {
   // icons
   static const String iconPath = "assets/icons/";
   static const String lottiePath = "assets/lottie/";
+  static const String imagePath = "assets/images/";
+
+
+
+
+  static const String splashScreenImage = "${imagePath}splashScreenImage.png";
 
 
 

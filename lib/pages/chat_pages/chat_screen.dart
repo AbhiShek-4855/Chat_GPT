@@ -237,14 +237,14 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
 
-               FutureBuilder(
-                   future: _banner(),
-                   builder: (context,snapShot){
-                 if(snapShot.connectionState == ConnectionState.waiting){
-                   return const SizedBox.shrink();
-                 }
-                 return snapShot.data as Widget;
-               })
+               // FutureBuilder(
+               //     future: _banner(),
+               //     builder: (context,snapShot){
+               //   if(snapShot.connectionState == ConnectionState.waiting){
+               //     return const SizedBox.shrink();
+               //   }
+               //   return snapShot.data as Widget;
+               // })
 
 
                // Obx(() =>  Container(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import 'app_assets.dart';
@@ -70,7 +71,7 @@ class AppIcon{
       width: 40,
       color: const Color(0xff0FA47F),
       child: Center(
-        child: AppIcon.openAiIcon(height: 30,width: 30),
+        child: Image.asset(AppAssets.splashScreenImage,color: Colors.white,).marginAll(5),
       ),
     );
   }
